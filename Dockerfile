@@ -1,6 +1,6 @@
 FROM mhart/alpine-node:8
-MAINTAINER AlbinoDrought <albinodrought@gmail.com>
-LABEL maintainer="AlbinoDrought <albinodrought@gmail.com>"
+MAINTAINER Malone Tuning <web@malonetuning.com>
+LABEL maintainer="Malone Tuning <web@malonetuning.com>"
 
 WORKDIR /app
 COPY ./src /app/src

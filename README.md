@@ -1,6 +1,6 @@
 # Tuning Influx Forwarder
 
-Hi
+Forwards request events from a tuning service to influxdb.
 
 ## Config
 
