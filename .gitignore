@@ -1,0 +1,6 @@
+/node_modules
+/.node-persist
+/dev.sh
+/dev-docker.sh
+/prod.sh
+/run-docker.sh

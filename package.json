@@ -1,0 +1,23 @@
+{
+  "name": "tuning-analytics-influx",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Package Description",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "babel-node --no-babelrc --presets=latest src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Malone Tuning <web@malonetuning.com>",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-latest": "^6.24.1"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "flat": "^4.0.0",
+    "influx": "^5.0.7",
+    "node-persist": "^2.1.0"
+  }
+}
