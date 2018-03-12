@@ -2,7 +2,7 @@
   "name": "tuning-analytics-influx",
   "private": true,
   "version": "0.0.1",
-  "description": "Package Description",
+  "description": "Forwards request events from a tuning service to influxdb.",
   "main": "src/index.js",
   "scripts": {
     "dev": "babel-node --no-babelrc --presets=latest src",
