@@ -104,7 +104,18 @@ const dataLoop = (func) => Promise.resolve()
 
     log(`Page ${lastScrape.page}/${lastPage}: ${newEvents.length} new events found`);
 
-    if (newEvents.length <= 0) {
+    const perPage = data.per_page;
+    const pageFull = data.data.length >= perPage;
+    const noNewEvents = newEvents.length <= 0;
+
+    if (noNewEvents && !pageFull) {
+      // if we've already submitted all events on this page,
+      // but there will eventually be more,
+      // return.
+
+      // otherwise, if we've submitted all events on this page,
+      // but there won't be any more,
+      // continue to next page.
       return;
     }
 
@@ -112,9 +123,13 @@ const dataLoop = (func) => Promise.resolve()
     const hasNextPage = data.last_page > data.current_page;
     const page = hasNextPage ? data.current_page + 1 : data.current_page;
 
-    return influxClient.writePoints(newEvents, {
-      precision: 's',
-    }).then(() => {
+    // skip writing if there's nothing new
+    const writePromise = newEvents.length > 0 ?
+      influxClient.writePoints(newEvents, {
+        precision: 's',
+      }) : Promise.resolve();
+
+    return writePromise.then(() => {
       setScrapeData(storage, {
         page,
         id: highestId,
