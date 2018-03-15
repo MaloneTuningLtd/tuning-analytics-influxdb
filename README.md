@@ -1,5 +1,7 @@
 # Tuning Influx Forwarder
 
+![Docker Automated build](https://img.shields.io/docker/automated/maloneweb/tuning-analytics-influxdb.svg)
+
 Forwards request events from a tuning service to influxdb.
 
 ## Config
